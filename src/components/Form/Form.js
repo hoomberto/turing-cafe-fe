@@ -1,4 +1,5 @@
 import React from "react"
+import './Form.css'
 
 class Form extends React.Component {
   constructor() {
@@ -18,7 +19,7 @@ class Form extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    for (let param of [name, date, time, number]) {
+    for (let param of ['name', 'date', 'time', 'number']) {
       if (!this.state[param]) {
         return
       }
