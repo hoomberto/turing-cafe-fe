@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { getCards, postNewRes, deleteRes } from '../../utilities/apiCalls'
+import { getRes, postNewRes, deleteRes } from '../../utilities/apiCalls'
 import CardsContainer from '../CardsContainer/CardsContainer'
 import Form from '../Form/Form'
+import Menu from '../Menu/Menu'
 import { Route, Link } from 'react-router-dom'
 import './App.css';
 
@@ -14,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getCards()
+    getRes()
     .then(data => {
       this.setState({cards: data})
     })
@@ -27,7 +28,7 @@ class App extends Component {
       this.setState((state) => ({
         cards: [...state.cards, reservation]
       }));
-      return getCards();
+      return getRes();
     })
     .then(data => this.setState({ cards: data }))
   }
@@ -35,7 +36,7 @@ class App extends Component {
   removeReservation = (id) => {
     deleteRes(id)
     .then(response => {
-      return getCards()
+      return getRes()
     })
     .then(data => this.setState({ cards: data }))
   }
@@ -53,10 +54,7 @@ class App extends Component {
           </>
           }}
         />
-        <Route exact path ="/menu" render={() => {
-            return <h1>MENU</h1>
-          }}
-        />
+      <Route exact path ="/menu" component={Menu} />
       </div>
     )
   }

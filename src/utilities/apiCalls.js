@@ -1,7 +1,12 @@
 const url = 'http://localhost:3001/api/v1/reservations'
 
-const getCards = () => {
+const getRes = () => {
   return fetch(url)
+  .then(checkResponse)
+}
+
+const getMenu = () => {
+  return fetch('http://localhost:3001/api/v1/menu')
   .then(checkResponse)
 }
 
@@ -30,4 +35,4 @@ const checkResponse = (response) => {
   throw new Error ('Response was not ok', response)
 }
 
-export { getCards, postNewRes, deleteRes }
+export { getRes, postNewRes, deleteRes, getMenu }
