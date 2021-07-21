@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getCards, postNewRes, deleteRes } from '../../utilities/apiCalls'
 import CardsContainer from '../CardsContainer/CardsContainer'
 import Form from '../Form/Form'
+import { Route, Link } from 'react-router-dom'
 import './App.css';
 
 class App extends Component {
@@ -42,10 +43,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <Form submitRes={this.addReservation} />
-        {!this.state.cards.length && <h2>No reservations yet - make one!</h2>}
-        <CardsContainer cardsData={this.state.cards} removeRes={this.removeReservation}/>
+        <Link exact="true" to="/"><h1 className='app-title'>Turing Cafe Reservations</h1></Link>
+        <Route exact path ="/" render={() => {
+          return <>
+          <Form submitRes={this.addReservation} />
+            <Link to="/menu"><button>Our menu</button></Link>
+            {!this.state.cards.length && <h2>No reservations yet - make one!</h2>}
+            <CardsContainer cardsData={this.state.cards} removeRes={this.removeReservation}/>
+          </>
+          }}
+        />
+        <Route exact path ="/menu" render={() => {
+            return <h1>MENU</h1>
+          }}
+        />
       </div>
     )
   }
