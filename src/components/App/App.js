@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getCards } from '../../utilities/apiCalls'
+import { getCards, postNewRes } from '../../utilities/apiCalls'
 import CardsContainer from '../CardsContainer/CardsContainer'
 import Form from '../Form/Form'
 import './App.css';
@@ -21,9 +21,14 @@ class App extends Component {
   }
 
   addReservation = (reservation) => {
-    this.setState((state) => ({
-      cards: [...state.cards, reservation]
-    }));
+    postNewRes(reservation)
+    .then(response => {      
+      this.setState((state) => ({
+        cards: [...state.cards, reservation]
+      }));
+      return getCards();
+    })
+    .then(data => this.setState({ cards: data }))
   }
 
   render() {
