@@ -44,7 +44,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Link exact="true" to="/"><h1 className='app-title'>Turing Cafe Reservations</h1></Link>
+        <Link exact="true" to="/" style={{textDecoration: 'none'}}><h1 className='app-title'>Turing Cafe Reservations</h1></Link>
         <Route exact path ="/" render={() => {
           return <>
           <Form submitRes={this.addReservation} />

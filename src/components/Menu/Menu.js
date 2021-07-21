@@ -1,5 +1,6 @@
 import React from "react"
 import MenuItem from '../MenuItem/MenuItem'
+import { Link } from 'react-router-dom'
 import { getMenu } from '../../utilities/apiCalls'
 import './Menu.css'
 
@@ -19,6 +20,7 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="menu">
+        <Link exact="true" to="/"><button className="back-btn">Go Back</button></Link>
         <h2>Food</h2>
         {!!this.state.menu.food &&
           <div className="food-container">

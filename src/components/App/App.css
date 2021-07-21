@@ -16,6 +16,11 @@
   color: teal;
   font-family: 'Pacifico', cursive;
   font-size: 50px;
+  transition: .2s ease all;
+}
+
+.app-title:hover {
+  color: cyan;
 }
 
 .App > h2 {
@@ -26,11 +31,23 @@
   border-radius: 8px;
 }
 
-.menu-btn {
+.menu-btn,
+.back-btn {
   margin-top: 35%;
   width: 200px;
   background: teal;
   color: white;
   height: 60px;
   cursor: pointer;
+  font-size: 18px;
+  transition: .2s ease all;
+}
+
+.back-btn {
+  margin-top: 5%;
+}
+
+
+.menu-btn:hover {
+  background: cyan;
 }
