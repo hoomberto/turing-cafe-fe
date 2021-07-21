@@ -69,7 +69,7 @@ class Form extends React.Component {
           placeholder="Number of guests"
           onChange={this.handleChange}
         />
-        <button onClick={this.handleSubmit}>Make Reservation</button>
+        <button id="submitBtn" onClick={this.handleSubmit}>Make Reservation</button>
       </form>
     )
   }
