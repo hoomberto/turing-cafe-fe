@@ -2,10 +2,6 @@
 
 This application was built with `create-react-app`.
 
-![comp-screenshot](https://ibb.co/0QfyN2t)
-![menu-functionality](https://ibb.co/P6FDwdy)
-
-
 ### Set Up
 
 Clone down this repo.
