@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getCards } from '../../utilities/apiCalls'
+import CardsContainer from '../CardsContainer/CardsContainer'
 import './App.css';
 
 class App extends Component {
@@ -25,9 +26,7 @@ class App extends Component {
         <div className='resy-form'>
 
         </div>
-        <div className='resy-container'>
-
-        </div>
+        <CardsContainer cardsData={this.state.cards} />
       </div>
     )
   }
