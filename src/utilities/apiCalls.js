@@ -1,5 +1,18 @@
+const url = 'http://localhost:3001/api/v1/reservations'
+
 const getCards = () => {
-  return fetch('http://localhost:3001/api/v1/reservations')
+  return fetch(url)
+  .then(checkResponse)
+}
+
+const postNewRes = (newRes) => {
+  return fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newRes)
+  })
   .then(checkResponse)
 }
 
@@ -10,4 +23,4 @@ const checkResponse = (response) => {
   throw new Error ('Response was not ok')
 }
 
-export { getCards }
+export { getCards, postNewRes }
