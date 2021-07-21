@@ -1,4 +1,5 @@
 import React from "react"
+import MenuItem from '../MenuItem/MenuItem'
 import { getMenu } from '../../utilities/apiCalls'
 
 class Menu extends React.Component {
@@ -18,13 +19,14 @@ class Menu extends React.Component {
     return (
       <div className="menu">
         <h2>Food</h2>
-        <div className="food-container">
-
-        </div>
+        {!!this.state.menu.food &&
+          <div className="food-container">
+          {this.state.menu.food.map(item => <MenuItem id={item.id} name={item.name} price={item.price} />)}
+        </div>}
         <h2>Drinks</h2>
-        <div className="drinks-container">
-
-        </div>
+        {!!this.state.menu.drinks && <div className="drinks-container">
+          {this.state.menu.drinks.map(item => <MenuItem id={item.id} name={item.name} price={item.price} />)}
+        </div>}
       </div>
     )
   }
