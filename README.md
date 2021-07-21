@@ -2,7 +2,7 @@
 
 This application was built with `create-react-app`.
 
-For entire meal functionality, add the following lies to `server.js` in API Repo: 
+For full menu functionality, add the following lines to `server.js` in API Repo: 
 
 ```
 app.locals.menu = menu;
