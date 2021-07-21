@@ -44,6 +44,7 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <Form submitRes={this.addReservation} />
+        {!this.state.cards.length && <h2>No reservations yet - make one!</h2>}
         <CardsContainer cardsData={this.state.cards} removeRes={this.removeReservation}/>
       </div>
     )
