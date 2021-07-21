@@ -4,11 +4,7 @@ describe('Form', () => {
   })
 
   it('User should be able to enter relevant data to input fields and submit a new reservation', () => {
-    cy.get('#name').type('Bobby')
-    cy.get('#date').type('07/21')
-    cy.get('#time').type('8')
-    cy.get('#number').type('7')
-    cy.get('#submitBtn').click()
+    cy.submitNewRes()
     cy.get('.card').should('have.length', 10)
   })
 
@@ -19,16 +15,6 @@ describe('Form', () => {
     cy.get('#number').type('7').should('have.value', '7')
   })
 
-  it('User can only submit form if all fields are filled', () => {
-    cy.get('#name').type('Bobby')
-    cy.get('#submitBtn').click()
-    cy.get('.card').should('have.length', 9)
-
-    cy.get('#date').type('07/21')
-    cy.get('#time').type('8')
-    cy.get('#number').type('7')
-    cy.get('#submitBtn').click()
-    cy.get('.card').should('have.length', 10)
-  })
+  
 
 })
