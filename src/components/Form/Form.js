@@ -16,9 +16,19 @@ class Form extends React.Component {
     this.setState({ [name]: value })
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+    for (let param of [name, date, time, number]) {
+      if (!this.state[param]) {
+        return
+      }
+    }
+    console.log("Submitted")
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           type="text"
           name="name"
@@ -47,7 +57,7 @@ class Form extends React.Component {
           placeholder="Number of guests"
           onChange={this.handleChange}
         />
-        <button>Make Reservation</button>
+        <button onClick={this.handleSubmit}>Make Reservation</button>
       </form>
     )
   }
