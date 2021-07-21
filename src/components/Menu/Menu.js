@@ -1,6 +1,7 @@
 import React from "react"
 import MenuItem from '../MenuItem/MenuItem'
 import { getMenu } from '../../utilities/apiCalls'
+import './Menu.css'
 
 class Menu extends React.Component {
   constructor() {
@@ -21,11 +22,11 @@ class Menu extends React.Component {
         <h2>Food</h2>
         {!!this.state.menu.food &&
           <div className="food-container">
-          {this.state.menu.food.map(item => <MenuItem id={item.id} name={item.name} price={item.price} />)}
+          {this.state.menu.food.map(item => <MenuItem key={item.id} id={item.id} name={item.name} price={item.price} />)}
         </div>}
         <h2>Drinks</h2>
         {!!this.state.menu.drinks && <div className="drinks-container">
-          {this.state.menu.drinks.map(item => <MenuItem id={item.id} name={item.name} price={item.price} />)}
+          {this.state.menu.drinks.map(item => <MenuItem key={item.id} id={item.id} name={item.name} price={item.price} />)}
         </div>}
       </div>
     )

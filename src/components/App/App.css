@@ -25,3 +25,12 @@
   padding: 30px;
   border-radius: 8px;
 }
+
+.menu-btn {
+  margin-top: 35%;
+  width: 200px;
+  background: teal;
+  color: white;
+  height: 60px;
+  cursor: pointer;
+}

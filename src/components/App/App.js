@@ -48,7 +48,7 @@ class App extends Component {
         <Route exact path ="/" render={() => {
           return <>
           <Form submitRes={this.addReservation} />
-            <Link to="/menu"><button>Our menu</button></Link>
+            <Link to="/menu"><button className="menu-btn">Our menu</button></Link>
             {!this.state.cards.length && <h2>No reservations yet - make one!</h2>}
             <CardsContainer cardsData={this.state.cards} removeRes={this.removeReservation}/>
           </>
