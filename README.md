@@ -4,12 +4,13 @@ This application was built with `create-react-app`.
 
 For entire meal functionality, add the following lies to `server.js` in API Repo: 
 
-`app.locals.menu = menu;
+```
+app.locals.menu = menu;
 
 app.get('/api/v1/menu', (request, response) => {
   return response.json(app.locals.menu)
 });
-`
+```
 
 
 ### Set Up
