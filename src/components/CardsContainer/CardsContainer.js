@@ -1,4 +1,6 @@
 import React from "react"
+import Card from "../Card/Card"
+import './CardsContainer.css'
 
 const CardsContainer = ({ cardsData }) => {
   return (
