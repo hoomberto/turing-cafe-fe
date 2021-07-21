@@ -17,7 +17,7 @@ const postNewRes = (newRes) => {
 }
 
 const deleteRes = (id) => {
-  return fetch(url + `${id}/`, {
+  return fetch(url + `/${id}`, {
     method: 'DELETE'
   })
   .then(checkResponse)
@@ -27,7 +27,7 @@ const checkResponse = (response) => {
   if (response.ok) {
     return response.json()
   }
-  throw new Error ('Response was not ok')
+  throw new Error ('Response was not ok', response)
 }
 
 export { getCards, postNewRes, deleteRes }
