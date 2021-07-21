@@ -1,16 +1,13 @@
-const url = 'http://localhost:3000/'
-
 const getCards = () => {
-  fetch(url)
+  return fetch('http://localhost:3001/api/v1/reservations')
   .then(checkResponse)
 }
 
-const checkResponse = response => {
+const checkResponse = (response) => {
   if (response.ok) {
     return response.json()
   }
   throw new Error ('Response was not ok')
 }
-
 
 export { getCards }

@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
+import { getCards } from '../../utilities/apiCalls'
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      cards: []
+    }
+  }
+
+  componentDidMount() {
+    getCards()
+    .then(data => {
+      this.setState({cards: data})
+    })
+    .catch(err => console.log(err))
+  }
+
   render() {
     return (
       <div className="App">
@@ -10,7 +26,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+
         </div>
       </div>
     )
