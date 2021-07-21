@@ -39,6 +39,7 @@ class Form extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <input
           type="text"
+          id="name"
           name="name"
           value={this.state.name}
           placeholder="Name"
@@ -46,6 +47,7 @@ class Form extends React.Component {
         />
         <input
           type="text"
+          id="date"
           name="date"
           value={this.state.date}
           placeholder="Date (mm/dd)"
@@ -53,6 +55,7 @@ class Form extends React.Component {
         />
         <input
           type="text"
+          id="time"
           name="time"
           value={this.state.time}
           placeholder="Time"
@@ -60,6 +63,7 @@ class Form extends React.Component {
         />
         <input
           type="text"
+          id="number"
           name="number"
           value={this.state.number}
           placeholder="Number of guests"
