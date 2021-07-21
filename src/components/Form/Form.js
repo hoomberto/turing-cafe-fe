@@ -62,11 +62,13 @@ class Form extends React.Component {
           onChange={this.handleChange}
         />
         <input
-          type="text"
+          type="number"
           id="number"
           name="number"
           value={this.state.number}
           placeholder="Number of guests"
+          min="1"
+          max="12"
           onChange={this.handleChange}
         />
         <button id="submitBtn" onClick={this.handleSubmit}>Make Reservation</button>

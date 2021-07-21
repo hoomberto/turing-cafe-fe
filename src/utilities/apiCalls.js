@@ -16,6 +16,13 @@ const postNewRes = (newRes) => {
   .then(checkResponse)
 }
 
+const deleteRes = (id) => {
+  return fetch(url + `${id}/`, {
+    method: 'DELETE'
+  })
+  .then(checkResponse)
+}
+
 const checkResponse = (response) => {
   if (response.ok) {
     return response.json()
@@ -23,4 +30,4 @@ const checkResponse = (response) => {
   throw new Error ('Response was not ok')
 }
 
-export { getCards, postNewRes }
+export { getCards, postNewRes, deleteRes }
