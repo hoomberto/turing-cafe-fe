@@ -24,7 +24,14 @@ class Form extends React.Component {
         return
       }
     }
-    console.log("Submitted")
+    const { name, date, time, number } = this.state
+    const newReservation = {
+      name: name,
+      date: date,
+      time: time,
+      number: number
+    }
+    this.props.submitRes(newReservation)
   }
 
   render() {
