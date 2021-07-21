@@ -17,3 +17,16 @@ form button {
   width: auto;
   height: 30px;
 }
+
+form > button {
+  background: teal;
+  color: white;
+  width: auto;
+  height: 30px;
+  transition: .2s ease all;
+  cursor: pointer;
+}
+
+form > button:hover {
+  background: cyan;
+}

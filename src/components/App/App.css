@@ -10,6 +10,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
+  overflow: auto;
 }
 
 .app-title {
@@ -48,6 +49,8 @@
 }
 
 
-.menu-btn:hover {
+.menu-btn:hover,
+.back-btn:hover,
+ {
   background: cyan;
 }
